@@ -3,7 +3,7 @@
 
 ## 简介
 PMIntentAnnnotation库可以帮助开发者轻松生成跳转Activity所需的Intent，只需要在对应的Activity类添加@NewIntent注解即可
-##使用方式
+## 使用方式
 在项目顶部 build.gradle 文件中添加如下代码：
 
 ```allprojects {
