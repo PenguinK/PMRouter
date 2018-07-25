@@ -35,6 +35,5 @@ public class MainActivity extends AppCompatActivity {
 
 }
 ```
-重新build项目，就会Navigator类以及
-对应的以start为前缀的方法 返回值为Intent 我们可以Navigator.startXXX()方法获取Intent进行操作了。
+重新build项目，就会生成Navigator类以及对应以start为前缀的获取Intent的方法。我们可以Navigator.startXXX()方法获取Intent进行操作了。
 
