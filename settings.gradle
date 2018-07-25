@@ -1,1 +1,1 @@
-include ':app', ':pm-annotation', ':pm-processor'
+include ':app', ':pm-annotation', ':pm-compiler'
