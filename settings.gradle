@@ -1,1 +1,1 @@
-include ':app', ':pm-annotation', ':pm-compiler'
+include ':app', ':pm-annotation', ':pm-compiler', ':othermodule', ':pm-router', ':kotlinmodule'
