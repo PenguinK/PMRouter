@@ -47,8 +47,7 @@ public class Postman implements IRouter {
         }
 
         //Set Bundle
-        intent.putExtra("params", mail.getBundle());
-
+        intent.putExtras(mail.getBundle());
 
 
         context.startActivity(intent);
