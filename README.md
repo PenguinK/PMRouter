@@ -16,8 +16,9 @@ PMIntentAnnnotation库可以帮助开发者轻松生成跳转Activity所需的In
 ```
 然后还需要修改对应module下的build.gradle文件，添加对应依赖
 ```
-implementation 'com.penguinmore.PMIntentAnnotation:pm-annotation:v0.1'
-annotationProcessor 'com.penguinmore.PMIntentAnnotation:pm-compiler:v0.1'
+implementation 'com.penguinmore.PMIntentAnnotation:pm-annotation:v0.5'
+implementation 'com.penguinmore.PMIntentAnnotation:pm-router:v0.5'
+annotationProcessor 'com.penguinmore.PMIntentAnnotation:pm-compiler:v0.5'
 ```
 
 之后需要在对应Activity中添加@NewIntent
