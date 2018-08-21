@@ -35,7 +35,9 @@ public class Router {
         return Postman.getInstance().build(path);
     }
 
-
+    public void injectParams(Object object){
+        Postman.getInstance().inject(object);
+    }
 
 
 }

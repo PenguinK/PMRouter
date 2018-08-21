@@ -1,11 +1,20 @@
 package com.penguinmore.pm_router.core;
 
+import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
-public class Postman implements IRouter {
+import com.penguinmore.pm_router.template.InjectionParam;
 
+import java.util.HashMap;
+import java.util.Map;
+
+public class Postman implements IRouter {
+    // injector's name -> injector
+    private static Map<String, Class<InjectionParam>> injectors = new HashMap<>();
+    public static final String PARAM_INJECT = "$$InjectParam";
 
     private Postman() {
 
@@ -51,5 +60,29 @@ public class Postman implements IRouter {
 
 
         context.startActivity(intent);
+    }
+
+    public void inject(Object object){
+        if (object instanceof Activity ) {
+            String key = object.getClass().getCanonicalName();
+            Class<InjectionParam> clz;
+            if (!injectors.containsKey(key)) {
+                try {
+                    //noinspection unchecked
+                    clz = (Class<InjectionParam>) Class.forName(key + PARAM_INJECT);
+                    injectors.put(key, clz);
+                } catch (ClassNotFoundException e) {
+                    return;
+                }
+            } else {
+                clz = injectors.get(key);
+            }
+            try {
+                InjectionParam injector = clz.newInstance();
+                injector.inject(object);
+            } catch (Exception e) {
+            }
+        } else {
+        }
     }
 }
