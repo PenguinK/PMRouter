@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.penguinmore.pmannotation.Route;
+import com.penguinmore.pm_annotation.Route;
 
 @Route(path = "TestActivity")
 public class TestActivity extends AppCompatActivity {
@@ -15,7 +15,7 @@ String id;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        id = getIntent().getBundleExtra("params").getString("id");
+        id = getIntent().getStringExtra("id");
         Toast.makeText(this, id, Toast.LENGTH_SHORT).show();
     }
 }

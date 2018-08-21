@@ -4,7 +4,6 @@ import android.app.Application;
 
 import com.penguinmore.pm_router.core.Config;
 import com.penguinmore.pm_router.core.Router;
-import com.penguinmore.pmannotation.Route;
 
 public class MyApp extends Application {
     @Override
