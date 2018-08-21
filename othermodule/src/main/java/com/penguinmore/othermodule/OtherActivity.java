@@ -4,15 +4,24 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
-import com.penguinmore.pmannotation.Route;
+import com.penguinmore.pm_annotation.InjectParam;
+import com.penguinmore.pm_annotation.Route;
+import com.penguinmore.pm_router.core.Router;
+
 @Route(path = "Other")
 public class OtherActivity extends AppCompatActivity {
 
+    @InjectParam
+    String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_other);
+        Router.getInstance().injectParams(this);
+
+        Toast.makeText(this, id, Toast.LENGTH_SHORT).show();
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 

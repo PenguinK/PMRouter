@@ -2,7 +2,7 @@ package com.penguinmore.kotlinmodule
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.penguinmore.pmannotation.Route
+import com.penguinmore.pm_annotation.Route
 
 @Route(path = "Kotlin")
 class KotlinActivity : AppCompatActivity() {
