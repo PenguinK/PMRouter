@@ -24,13 +24,13 @@ PMRouter 是一个android路由框架 目前已实现功能如下：
 2. 需要修改对应module下的build.gradle文件，添加对应依赖
 
 ```
-implementation 'com.penguinmore.PMRouter:pm-annotation:v0.5'
-implementation 'com.penguinmore.PMRouter:pm-router:v0.5'
+implementation 'com.penguinmore.PMRouter:pm-annotation:{latest version}'//见顶部最新版本号 如v0.8
+implementation 'com.penguinmore.PMRouter:pm-router:{latest version}'
 //Java版本
-annotationProcessor 'com.penguinmore.PMRouter:pm-compiler:v0.5'
+annotationProcessor 'com.penguinmore.PMRouter:pm-compiler:{latest version}'
 //Kotlin版本需要如下修改
 apply plugin: 'kotlin-kapt'
-kapt 'com.penguinmore.PMRouter:pm-compiler:v0.5'
+kapt 'com.penguinmore.PMRouter:pm-compiler:{latest version}'
 ```
 
 此外，还需要修改build.gradle，添加javaCompileOptions 的module参数
