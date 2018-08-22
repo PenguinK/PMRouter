@@ -51,8 +51,9 @@ public class Mail {
         return mFlag;
     }
 
-    public void setFlags(int mFlag) {
+    public Mail setFlags(int mFlag) {
         this.mFlag = mFlag;
+        return this;
     }
 
     /**
