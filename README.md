@@ -96,7 +96,7 @@ Router.getInstance().
        navigation(MainActivity.this);
 ```
 
-跳转时还支持传递常见类型参数、设置Flag
+跳转时还支持传递常见类型参数、设置Flag、设置requestCode
 * withString
 * withBoolean
 * withShort
@@ -134,7 +134,13 @@ Router.getInstance().
        setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK).
        navigation(MainActivity.this);
 ```
-
+//设置RequestCode来支持startActivityForResult()
+```
+Router.getInstance().
+       build("Other").
+       withRequestCode(666)
+       navigation(MainActivity.this);
+```
 
 
 
