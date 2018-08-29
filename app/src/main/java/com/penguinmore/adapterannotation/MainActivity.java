@@ -1,12 +1,15 @@
 package com.penguinmore.adapterannotation;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.penguinmore.pm_router.core.Router;
 import com.penguinmore.pm_annotation.Route;
@@ -29,7 +32,13 @@ public class MainActivity extends AppCompatActivity {
 //                          .withString("id", "9527")
 //                          .navigation(MainActivity.this);
 
-                  Router.getInstance().build("Other").withString("id", "0089").navigation(MainActivity.this);
+                Router.getInstance().
+                        build("Other").
+                        withString("id", "1234").
+                        withRequestCode(99).
+                        navigation(MainActivity.this);
+                Intent it = new Intent();
+                it.putExtras(new Bundle());
 
             }
         });
@@ -55,5 +64,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Toast.makeText(this, String.valueOf(resultCode), Toast.LENGTH_SHORT).show();
     }
 }

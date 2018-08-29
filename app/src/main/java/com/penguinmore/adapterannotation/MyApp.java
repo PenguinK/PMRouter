@@ -10,6 +10,6 @@ public class MyApp extends Application {
     public void onCreate() {
         super.onCreate();
         Router.getInstance()
-                .init(new Config.Builder().registerModules("app", "othermodule","kotlinmodule").build());
+                .init(new Config.Builder().registerModules("app","othermodule").build());
     }
 }

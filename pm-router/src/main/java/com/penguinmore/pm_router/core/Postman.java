@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
 
 import com.penguinmore.pm_router.template.InjectionParam;
 
@@ -57,13 +58,12 @@ public class Postman implements IRouter {
 
         //Set Bundle
         intent.putExtras(mail.getBundle());
-
-
-        context.startActivity(intent);
+        //Using startActivityForResult to adapter more situation
+        ActivityCompat.startActivityForResult((Activity) context, intent, mail.getRequestCode(), mail.getBundle());
     }
 
-    public void inject(Object object){
-        if (object instanceof Activity ) {
+    public void inject(Object object) {
+        if (object instanceof Activity) {
             String key = object.getClass().getCanonicalName();
             Class<InjectionParam> clz;
             if (!injectors.containsKey(key)) {
